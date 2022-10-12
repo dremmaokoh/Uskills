@@ -39,7 +39,7 @@ How to install
 >- Run: <kbd>npm run dev <kbd>
 
 ### Postman Documentation
-[click here]()
+[click here](https://documenter.getpostman.com/view/22271662/2s83zmM2W1)
 
 ### Heroku
 [click here](https://uskills.herokuapp.com/)
