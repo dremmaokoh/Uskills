@@ -20,7 +20,7 @@ passport.serializeUser((user, done) => {
           new GitHubStrategy({
            clientID: process.env.GITHUB_CLIENT_ID,
            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-           callbackURL: "https://uskills.herokuapp.com/auth/github/callback"
+           callbackURL: "https:/uskills.herokuapp.com/auth/github/callback"
          },
      async (accessToken, refreshToken, profile, done) => { 
   //    console.log ('iam in')
