@@ -1,4 +1,5 @@
-const express = require('express');
+const express = require('express')
+const cookies = require('cookie-session');
 const ejs = require('ejs');
 const path = require('path');
 const passport = require('passport');
@@ -14,15 +15,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(
-  session({
+  cookies ({
   secret: process.env.KEYS,
-  resave: false,
-  saveUninitialized: false,
- cookie: { httpOnly: true,
-           secure: false,
+  // resave: false,
+  // saveUninitialized: false,
+//  cookie: { httpOnly: true,
+//            secure: false,
            maxAge: 24 * 60 * 60 * 1000,
 }
-}))
+))
 
 
 // connect to db
