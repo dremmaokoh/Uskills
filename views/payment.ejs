@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Uskills Subscribtion</title>
+    <style>
+ body {
+  font-family: Sans-Serif;
+}
+#start-payment-button {
+    cursor: pointer;
+    position: relative;
+    background-color: blueviolet;
+    color: #fff;
+    max-width: 30%;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    transition: all .1s ease-in;
+}
+</style>
+</head>
+<body>
+    <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+        <div>
+          SUBCRIPTION FEE is ₦89,500
+        </div>
+        <input type="hidden" name="public_key" value="FLWPUBK_TEST-ff91120a34df9c85551a928ae4b518f4-X"/>
+        <label> Name:</label>
+        <input type="text" name="customer[name]"  placeholder="Enter Name" required>
+        <label> Email:</label>
+         <input type="text" name="customer[email]" placeholder="Enter Email" required>
+         <label> Phone Number:</label>
+         <input type="number" name="customer[phoneNumber]" placeholder="Enter Phone Number" required>
+         <input type="hidden" name="tx_ref" value= "bitethtx-019203" />
+        <input type="hidden" name="amount" value="89500" />
+        <input type="hidden" name="currency" value="NGN" />
+        <input type="hidden" name="meta[token]" value="54" />
+        <input type="hidden" name="redirect_url" value="localhost:3000/api/find" />
+        <button type="submit" id="start-payment-button">Pay Now</button>
+      </form>
+</body>
+</html>

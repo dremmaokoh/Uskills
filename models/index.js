@@ -17,6 +17,7 @@ db.sequelize = sequelize;
 
 db.user = require("./user.model")(sequelize, Sequelize);
 db.post = require("./post.model")(sequelize, Sequelize);
+//db.post = require("./post.model")(sequelize, Sequelize);
 
 // db.user.hasMany(db.post, { as: 'post' });
 // db.post.belongsTo(db.user, {
