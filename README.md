@@ -42,7 +42,7 @@ How to install
 [click here]()
 
 ### Heroku
-[click here]()
+[click here](https://uskills.herokuapp.com/)
 
 
 
