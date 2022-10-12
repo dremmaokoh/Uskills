@@ -15,15 +15,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(
-  cookies ({
+  session({
   secret: process.env.KEYS,
-  // resave: false,
-  // saveUninitialized: false,
-//  cookie: { httpOnly: true,
-//            secure: false,
+  resave: false,
+  saveUninitialized: false,
+ cookie: { httpOnly: true,
+           secure: false,
            maxAge: 24 * 60 * 60 * 1000,
 }
-))
+}))
 
 
 // connect to db
