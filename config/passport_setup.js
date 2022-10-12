@@ -42,7 +42,7 @@ console.log (existingUser)
        });
   //    console.log ('iam 23')
 
-      done(null, newUser);
+  //    done(null, newUser);
      } 
    )
  );
