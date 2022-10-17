@@ -81,10 +81,10 @@ app.get('/',(req,res)=>{
        }   }
 )
 
-const Flutterwave = require('flutterwave-node-v3');
-const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
-const payload = {"id": ""};
-const response = await flw.Transaction.verify(payload)
+// const Flutterwave = require('flutterwave-node-v3');
+// const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+// const payload = {"id": ""};
+// const response = await flw.Transaction.verify(payload)
 
 // const Flutterwave = require('flutterwave-node-v3');
 // const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
