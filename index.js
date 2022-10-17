@@ -81,21 +81,23 @@ app.get('/',(req,res)=>{
 //        }   }
 // )
 
-const Flutterwave = require('flutterwave-node-v3');
-const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
-flw.Transaction.verify({ id: transactionId })
-    .then((response) => {
-        if (
-            response.data.status === "successful"
-            && response.data.amount === expectedAmount
-            && response.data.currency === expectedCurrency) {
-            // Success! Confirm the customer's payment
-        } else {
-            // Inform the customer their payment was unsuccessful
-        }
-    })
-    .catch(console.log);
-    
+// const Flutterwave = require('flutterwave-node-v3');
+// const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+// flw.Transaction.verify({ id: transactionId })
+//     .then((response) => {
+//         if (
+//             response.data.status === "successful"
+//             && response.data.amount === expectedAmount
+//             && response.data.currency === expectedCurrency) {
+//             // Success! Confirm the customer's payment
+//         } else {
+//             // Inform the customer their payment was unsuccessful
+//         }
+//     })
+//     .catch(console.log);
+
+
+
  const port = process.env.PORT 
  app.listen(port, () => {
    console.log(`app running on http://localhost:${port}`);
