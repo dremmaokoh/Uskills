@@ -66,20 +66,25 @@ app.get('/',(req,res)=>{
     res.render("payment") 
   });
  
-//   app.get('/payment-callback', async (req, res) => {
-//     if (req.query.status === 'successful') {
-//         const transactionDetails = await Transaction.find({ref: req.query.tx_ref});
-//         const response = await flw.Transaction.verify({id: req.query.transaction_id});
-//         if (
-//             response.data.status === "successful"
-//             && response.data.amount === transactionDetails.amount
-//             && response.data.currency === "NGN") {
-//             // Success! Confirm the customer's payment
-//         } else {
-//             // Inform the customer their payment was unsuccessful
-//         }
-//        }   }
-// )
+  app.get('/payment-callback', async (req, res) => {
+    if (req.query.status === 'successful') {
+        const transactionDetails = await Transaction.find({ref: req.query.tx_ref});
+        const response = await flw.Transaction.verify({id: req.query.transaction_id});
+        if (
+            response.data.status === "successful"
+            && response.data.amount === transactionDetails.amount
+            && response.data.currency === "NGN") {
+            // Success! Confirm the customer's payment
+        } else {
+            // Inform the customer their payment was unsuccessful
+        }
+       }   }
+)
+
+const Flutterwave = require('flutterwave-node-v3');
+const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+const payload = {"id": ""};
+const response = await flw.Transaction.verify(payload)
 
 // const Flutterwave = require('flutterwave-node-v3');
 // const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
