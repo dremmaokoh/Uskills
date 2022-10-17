@@ -28,9 +28,9 @@
 <body>
     <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
         <div>
-          SUBCRIPTION FEE is ₦89,500
+          SUBCRIPTION FEE is ₦4,500
         </div>
-        <input type="hidden" name="public_key" value="FLWPUBK_TEST-ff91120a34df9c85551a928ae4b518f4-X"/>
+        <input type="hidden" name="public_key" value="FLWPUBK_TEST-SANDBOXDEMOKEY-X"/>
         <label> Name:</label>
         <input type="text" name="customer[name]"  placeholder="Enter Name" required>
         <label> Email:</label>
@@ -38,10 +38,10 @@
          <label> Phone Number:</label>
          <input type="number" name="customer[phoneNumber]" placeholder="Enter Phone Number" required>
          <input type="hidden" name="tx_ref" value= "bitethtx-019203" />
-        <input type="hidden" name="amount" value="89500" />
+        <input type="hidden" name="amount" value="4500" />
         <input type="hidden" name="currency" value="NGN" />
         <input type="hidden" name="meta[token]" value="54" />
-        <input type="hidden" name="redirect_url" value="localhost:3000/api/find" />
+        <input type="hidden" name="redirect_url" value="https://uskills.herokuapp.com/api/find" />
         <button type="submit" id="start-payment-button">Pay Now</button>
       </form>
 </body>
