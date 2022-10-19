@@ -1,5 +1,4 @@
 const express = require('express')
-const sequelize = require('sequelize')
 const ejs = require('ejs');
 const path = require('path');
 const passport = require('passport');
@@ -68,7 +67,7 @@ app.get('/',(req,res)=>{
   });
 
 
-  sequelize.startsession
+
 // To verify payment 
 // GET
 // https://api.flutterwave.com/v3/transactions/:id/verify
