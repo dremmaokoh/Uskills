@@ -7,9 +7,47 @@
     <link rel="stylesheet" href="./style.css">
     <title>Uskills Subscribtion</title>
     <style>
- body {
-  font-family: Sans-Serif;
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgba(0, 217, 255, 0);
+        }
+        nav{
+            margin: 0px 5px;
+         background-color: lightgreen;
+         height: 50px;
+         text-align: left;
+           
+        }
+        nav ul li {
+            text-align: left;
+            padding: 10px;
+            list-style-type: none;
+        }
+        a{
+            color: rgb(20, 18, 18);
+            padding: 5px 0;
+            text-decoration: none;
+            font-size: 30px;
+        }
+      .other{
+        margin: 10px;
+        padding: 5px 0;
+        text-align: center;
+      }
+      main{
+        margin: 5px;
+        padding: 5px 0;
+      }
+h2{ 
+    padding: 0px 0px 20px 0;
 }
+      .h1{
+        padding: 5px 0;
+      }
 #start-payment-button {
     cursor: pointer;
     position: relative;
@@ -30,7 +68,7 @@
         <div>
           SUBCRIPTION FEE is ₦4,500
         </div>
-        <input type="hidden" name="public_key" value="FLWPUBK_TEST-ff91120a34df9c85551a928ae4b518f4-X"/>
+        <input type="hidden" name="public_key" value=process.env.FLW_PUBLIC_KEY />
         <label> Name:</label>
         <input type="text" name="customer[name]"  placeholder="Enter Name" required>
         <label> Email:</label>

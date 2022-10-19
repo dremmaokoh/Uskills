@@ -1,5 +1,5 @@
 const express = require('express')
-const cookies = require('cookie-session');
+const sequelize = require('sequelize')
 const ejs = require('ejs');
 const path = require('path');
 const passport = require('passport');
@@ -28,6 +28,7 @@ app.use(
 
 // connect to db
 const db = require("./models/index");
+const { sequelize } = require('./models/index');
 db.sequelize.authenticate().then(() => {
       console.log("Connected to the database!");
     })
@@ -65,43 +66,12 @@ app.get('/',(req,res)=>{
   app.get("/flutter",(req,res)=>{
     res.render("payment") 
   });
- 
-  app.get('/payment-callback', async (req, res) => {
-    if (req.query.status === 'successful') {
-        const transactionDetails = await Transaction.find({ref: req.query.tx_ref});
-        const response = await flw.Transaction.verify({id: req.query.transaction_id});
-        if (
-            response.data.status === "successful"
-            && response.data.amount === transactionDetails.amount
-            && response.data.currency === "NGN") {
-            // Success! Confirm the customer's payment
-        } else {
-            // Inform the customer their payment was unsuccessful
-        }
-       }   }
-)
-
-// const Flutterwave = require('flutterwave-node-v3');
-// const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
-// const payload = {"id": ""};
-// const response = await flw.Transaction.verify(payload)
-
-// const Flutterwave = require('flutterwave-node-v3');
-// const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
-// flw.Transaction.verify({ id: transactionId })
-//     .then((response) => {
-//         if (
-//             response.data.status === "successful"
-//             && response.data.amount === expectedAmount
-//             && response.data.currency === expectedCurrency) {
-//             // Success! Confirm the customer's payment
-//         } else {
-//             // Inform the customer their payment was unsuccessful
-//         }
-//     })
-//     .catch(console.log);
 
 
+  sequelize.startsession
+// To verify payment 
+// GET
+// https://api.flutterwave.com/v3/transactions/:id/verify
 
  const port = process.env.PORT 
  app.listen(port, () => {
