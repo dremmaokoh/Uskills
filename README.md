@@ -1,10 +1,10 @@
-# Uskill
+# Uskills
 # My_challange_project_
 Create a platform to help anyone learn tech skill called Uskills that has the following endpoints;
 >- Authenticate users with Oauth2 and social media (Github)
 >- Upload a post (title, body and attachment ; pdf, image, docx)
->- Delete post form Role_ADMIN
->- to edit information about existing pets
+>- Delete post from Role_ADMIN
+>- role can be chnaged from user to admin
 >- to make payment using Flutterwave payment gateway
 
 ````````
